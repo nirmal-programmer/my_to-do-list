@@ -1,7 +1,103 @@
-h1{
-    color: blue;
+* {
+    font-family: 'Poppins', sans-serif;
 }
 
-h2 {
-    color: green;
+body{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }
+
+#layoutBox{
+    background-color: white;
+    justify-content: center;
+    height: 470px;
+    width: 320px;
+    border-radius: 5%;
+    border-color: black;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+#div1{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#logo{
+    background-color: #2563EB;
+    display: flex;
+    color: white;
+    height: 50px;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    border-radius: 10%;
+}
+
+#Taskly{
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#heading2{
+    font-weight: 500;
+    font-size: 15px;
+    color: #3f4c6a;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+#pngDiv{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#png{
+    height: 100px; 
+    width: auto;
+    margin-top: 0%;
+}
+
+#enterName{
+    color: rgb(27, 27, 29);
+    font-size: 15px;
+    margin-left: 40px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+#name{
+    height: 40px;
+    width: 225px;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: #a9b3cd;
+    font-size: 17px;
+    padding-left: 10px;
+}
+
+#registerBtn{
+    height: 50px;
+    width: 240px;
+    border-radius: 6px;
+    border-width: 2px;
+    background-color: #2563EB;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
