@@ -4,17 +4,19 @@
 
 body{
     background-color: aliceblue;
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
+    margin:0;
+    height: 90vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
 }
 
 #layoutBox{
     background-color: white;
     justify-content: center;
     height: 470px;
-    width: 320px;
-    border-radius: 5%;
+    width: 350px;
+    border-radius: 20px;
     border-color: black;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
 }
@@ -80,7 +82,7 @@ body{
 
 #name{
     height: 40px;
-    width: 225px;
+    width: 255px;
     border-radius: 6px;
     border-width: 2px;
     border-color: #a9b3cd;
@@ -90,7 +92,7 @@ body{
 
 #registerBtn{
     height: 50px;
-    width: 240px;
+    width: 270px;
     border-radius: 6px;
     border-width: 2px;
     background-color: #2563EB;
@@ -101,3 +103,12 @@ body{
     cursor: pointer;
 }
 
+#madeBy{
+    text-align: center;
+    position: relative;
+    top: 80px;
+    font-weight: 500;
+    color: rgb(57, 58, 78);
+    font-size: 13px;
+
+}
