@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head> 
+    <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taskly To-Do List</title>
-</head>
+    <link rel="stylesheet" href="page2.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head> 
 <body>
-    <h1 id="heading1"></h1>
+    <div id="navbar">
+            <div id="logo">
+            ✓
+            </div>
+ 
+            <h1 id="Taskly">Taskly</h1>
+    </div>
+  
+    <h2 id="welcome" class="allEl"></h2>
 
+    <p class="allEl" id="line1">Lets get things done today.</p>
 
+    <div id="addTasks">
+        <input type="text" placeholder="Add a new task..." class="allEl" id="addTaskBar">
+        <button id="addTaskBtn">
+            Add +
+        </button>
+    </div>
+    
+    <div id="yourTaskDiv">   
+        <h3 class="allEl">Your tasks</h3>
+        
+        <div id="filterBtnDiv">
+            <button class="taskFilterBtn" id="allBtn">All</button>
+            <button class="taskFilterBtn">Pending</button> 
+            <button class="taskFilterBtn">Completed</button>
+        </div>  
+         
+    </div> 
+    <div id="tasksDiv">   
+        <!-- <div id="task">
+            <label for="Workout" id="taskLabel">
+                <input type="checkbox" value="Workout" name=task id="taskCheckbox">
+                     Workout
+            </label>
+            <button id="deleteBtn">
+                <i class="material-icons" style="font: size 15px;color:red">delete</i>
+            </button>
+            
+        </div> -->
+    </div>
+    
     <script src="page2.js"></script>
 </body>
 </html>

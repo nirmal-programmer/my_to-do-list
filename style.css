@@ -1,17 +1,17 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
-
+ 
 body{
     background-color: aliceblue;
     margin:0;
-    height: 90vh;
+    height: 90vh; 
     display:flex;
-    justify-content:center;
+    justify-content:center; 
     align-items: center;
-}
+} 
 
-#layoutBox{
+#layoutBox{ 
     background-color: white;
     justify-content: center;
     height: 470px;
@@ -50,7 +50,7 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
+ 
 #heading2{
     font-weight: 500;
     font-size: 15px;
@@ -103,12 +103,17 @@ body{
     cursor: pointer;
 }
 
+#registerBtn:active{ 
+    background-color: #20418a;
+    transform: scale(0.99);
+}
+
 #madeBy{
     text-align: center;
     position: relative;
     top: 80px;
     font-weight: 500;
-    color: rgb(57, 58, 78);
+    color: #224899;
     font-size: 13px;
 
 }
