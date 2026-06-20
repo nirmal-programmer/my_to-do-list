@@ -6,5 +6,5 @@ registerBtn.addEventListener("click",function(){
     localStorage.setItem("userName", name);
 
     window.location.href="page2.html";
-});
- 
+}); 
+   

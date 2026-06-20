@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
     <title>Taskly To-Do List</title>
     <link rel="stylesheet" href="page2.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-</head> 
-<body>
+  
+</head>  
+<body> 
     <div id="navbar">
-            <div id="logo">
+            <div id="logo">  
             ✓
             </div>
  
@@ -26,7 +26,26 @@
         <button id="addTaskBtn">
             Add +
         </button>
-    </div>
+    </div> 
+    
+    <div id="progressStatusParentDiv">
+        <div id="progressStatusChildDiv">
+            <div id="persentageDiv">
+                <h3 id="yourProgress">Your Progress</h3>
+                <p id="persentage"></p>
+            </div> 
+           
+            <div id="progressDivBgDiv">
+                <div id="progressDiv">
+                    <div id="progressLine">
+
+                    </div>
+                </div>
+            </div>
+            
+            <p id="completedTaskLine"></p>
+        </div>
+    </div> 
     
     <div id="yourTaskDiv">   
         <h3 class="allEl">Your tasks</h3>
@@ -37,7 +56,7 @@
             <button class="taskFilterBtn">Completed</button>
         </div>  
          
-    </div> 
+    </div>  
     <div id="tasksDiv">   
         <!-- <div id="task">
             <label for="Workout" id="taskLabel">
@@ -48,7 +67,7 @@
                 <i class="material-icons" style="font: size 15px;color:red">delete</i>
             </button>
             
-        </div> -->
+        </div> --> 
     </div>
     
     <script src="page2.js"></script>

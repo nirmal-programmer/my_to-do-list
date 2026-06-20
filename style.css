@@ -1,6 +1,6 @@
 * {
     font-family: 'Poppins', sans-serif;
-}
+} 
  
 body{
     background-color: aliceblue;
@@ -9,7 +9,7 @@ body{
     display:flex;
     justify-content:center; 
     align-items: center;
-} 
+}   
 
 #layoutBox{ 
     background-color: white;
