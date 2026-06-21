@@ -89,7 +89,7 @@
     align-items: center;
     cursor: pointer;
 }
-
+ 
 #addTaskBtn:active{
     background-color: #224899;
     transform: scale(0.99);
@@ -154,10 +154,11 @@
 
 #progressLine{
     height: 12px;
-    /* width: 0%; */
+    width: 0%;
     background-color: #2563EB;
     margin: 0%;
     border-radius: 6px;
+    transition: width 1s ease;
 }
 
 #completedTaskLine{

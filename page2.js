@@ -1,7 +1,7 @@
-let name=localStorage.getItem("userName");
+let nm=localStorage.getItem("userName");
 
 document.getElementById("welcome").textContent =
-      "Hello, " + name + " 👋";
+      "Hello, " + nm + " 👋";
 
 function updateProgress(){
      let totalTask = document.querySelectorAll(".task-checkbox").length;
@@ -21,7 +21,6 @@ function updateProgress(){
      let completedTaskLine=document.querySelector("#completedTaskLine");
      completedTaskLine.textContent = "Completed " + completedTask + " of " + totalTask +" task ";
 
-     console.log(persentage);
 };  
 
 updateProgress();
