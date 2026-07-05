@@ -5,6 +5,9 @@ let nm=localStorage.getItem("userName");
 document.getElementById("welcome").textContent =
       "Hello, " + nm + " 👋"; 
 
+let data;
+let arr = [];
+
 function updateProgress(){
      let totalTask = document.querySelectorAll(".task-checkbox").length;
 
@@ -27,16 +30,7 @@ function updateProgress(){
 
 updateProgress();
 
-let addTaskBtn=document.getElementById("addTaskBtn");
-
-addTaskBtn.addEventListener("click", () =>{
-
-    let input = document.getElementById("addTaskBar");
-    let task = input.value.trim();
-
-    if(task === ""){
-        return("please enter task");
-    }
+function createTask(task) {
 
     let tasksDiv = document.getElementById("tasksDiv")
 
@@ -45,12 +39,14 @@ addTaskBtn.addEventListener("click", () =>{
 
     const taskLabel = document.createElement("label");
     taskLabel.id="taskLabel"; 
-    taskLabel.textContent = task;
+    taskLabel.textContent = task.taskName;
  
     const taskCheckbox = document.createElement("input");
     taskCheckbox.type="checkbox";
     taskCheckbox.id="taskCheckbox";
     taskCheckbox.classList.add("task-checkbox");
+    taskCheckbox.checked = task.completed;
+    
 
     const deleteBtn=document.createElement("button");
     deleteBtn.id="deleteBtn"; 
@@ -67,26 +63,79 @@ addTaskBtn.addEventListener("click", () =>{
     taskDiv.appendChild(deleteBtn);
     tasksDiv.append(taskDiv);
     updateProgress();
-    
-    input.value = "";
 
     deleteBtn.onclick = () => {
+        arr = arr.filter(item => item.taskName !== task.taskName);
+        localStorage.setItem("task" , JSON.stringify(arr));
         taskDiv.remove();
         updateProgress();
     };
 
     taskCheckbox.addEventListener("change", () => {
         if(taskCheckbox.checked){
+            task.completed = true;
             taskLabel.style.textDecoration = "line-through";
             taskLabel.style.color = "grey";
             updateProgress();
+
         }else{
+            task.completed = false;
             taskLabel.style.textDecoration = "none";
             taskLabel.style.color = "black";
+            updateProgress(); 
+        };
+        
+        if(task.completed){
+            taskLabel.style.textDecoration = "line-through";
+            taskLabel.style.color = "grey";
             updateProgress();
         };
+        localStorage.setItem("task" , JSON.stringify(arr));
     });
-}); 
+
+    if(task.completed){
+        taskLabel.style.textDecoration = "line-through";
+        taskLabel.style.color = "grey";
+        updateProgress();
+    }
+};
+
+let addTaskBtn=document.getElementById("addTaskBtn");
+
+addTaskBtn.addEventListener("click", () =>{
+    let check = false;
+    let input = document.getElementById("addTaskBar");
+    let task = input.value.trim();
+
+    if(task === ""){
+        return("please enter task");
+    };
+
+    let taskObj = {
+        taskName: task,
+        completed: check
+    };
+
+    arr.push(taskObj);
+    createTask(taskObj);
+
+    let lData = localStorage.setItem("task" , JSON.stringify(arr));
+    console.log(localStorage.getItem("task"));
+
+    input.value = "";
+
+});
+
+arr = JSON.parse(localStorage.getItem("task")) || [];
+console.log(arr);
+
+for(let i=0; i<arr.length; i++){
+    taskData = arr[i];
+    createTask(taskData);
+};
+
+
+
 
 
 // AI code💀💀
