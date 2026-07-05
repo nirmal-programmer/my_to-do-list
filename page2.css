@@ -74,7 +74,7 @@
     border-width: 0px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 } 
-
+ 
 #addTaskBtn{
     position: absolute;
     right: 7.5%;
@@ -105,7 +105,7 @@
 #progressStatusChildDiv{
     background-color: white;
     height: 75px;
-    width: 92%;
+    width: 93%;
     margin: 0%;
     border-radius: 10px;
     border-width: 0px;
@@ -239,5 +239,10 @@
     border-width: 0px;
     background-color: white;
     cursor: pointer;
+}
+
+#taskImage{
+    width: 350px;
+
 }
 
