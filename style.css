@@ -97,6 +97,8 @@ body{
     font-size: 20px;
     border: none;
     cursor: pointer;
+    position: relative;
+    bottom: 7px;
 }
 
 #registerBtn:active{ 
