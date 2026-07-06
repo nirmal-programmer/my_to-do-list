@@ -1,4 +1,4 @@
-
+//page2.js
 // MY Code☠️☠️☠️☠️
 let nm=localStorage.getItem("userName");
 
@@ -154,5 +154,14 @@ for(let i=0; i<arr.length; i++){
     addTaskImg();
 };
 console.log("Task added:" + taskNum);
+
+// Register Service Worker
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js")
+            .then(() => console.log("Service Worker Registered"))
+            .catch(err => console.log(err));
+    });
+}
 
 
