@@ -22,17 +22,8 @@
 }
 
 #logo{
-    background-color: #2563EB;
-    display: flex;
-    color: white;
-    height: 18px;
-    width: 18px;
-    justify-content: center;
-    align-items: center;
-    font-size: 12px;
-    border-radius: 20%;
-    position: absolute;
-    left: 23px;
+    width: 23px;
+    margin-left: 22px;
 }
 
 #Taskly{
