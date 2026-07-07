@@ -15,7 +15,7 @@ body{
 #layoutBox{ 
     background-color: white;
     justify-content: center;
-    height: 420px;
+    height: 430px;
     width: 300px;
     border-radius: 20px;
     border-color: black;
@@ -83,6 +83,16 @@ body{
     border-color: #a9b3cd;
     font-size: 17px;
     padding-left: 10px;
+}
+
+#errorPara{
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 27px;
+    margin-top: 0%;
+    color: red;
+    margin-bottom: 0%;
+    display: none;
 }
 
 #registerBtn{

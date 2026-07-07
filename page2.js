@@ -34,7 +34,7 @@ function addTaskImg(){
     taskImg.src = "taskImg.png";
     taskImg.id = "taskImage";
 
-    if (taskNum == 0) {
+    if (taskNum <= 0) {
         tasksDiv.append(taskImg); // Append the image you created
     } else {
         let taskImage = document.getElementById("taskImage");
@@ -63,7 +63,16 @@ function createTask(task) {
     taskCheckbox.id="taskCheckbox";
     taskCheckbox.classList.add("task-checkbox");
     taskCheckbox.checked = task.completed;
-    
+
+    // const btnDiv = document.createElement("div");
+    // btnDiv.id = "btnDiv";
+
+    // const editBtn = document.createElement("button");
+    // editBtn.id = "editBtn";
+    // editBtn.textContent = "e";
+
+    // const editIcon = document.createElement("i");
+    // icon.classList = "fas fa-pen";
 
     const deleteBtn=document.createElement("button");
     deleteBtn.id="deleteBtn"; 
@@ -73,8 +82,11 @@ function createTask(task) {
     icon.textContent = "delete";
     icon.style.fontSize = "23px";
     icon.style.color = "red";
- 
+
+    // editBtn.appendChild(editIcon);
     deleteBtn.appendChild(icon);
+    // btnDiv.appendChild(editBtn);
+    // btnDiv.appendChild(deleteBtn);
     taskDiv.appendChild(taskCheckbox);
     taskDiv.appendChild(taskLabel);
     taskDiv.appendChild(deleteBtn);
@@ -112,7 +124,9 @@ function createTask(task) {
         taskLabel.style.textDecoration = "line-through";
         taskLabel.style.color = "grey";
         updateProgress();
-    }
+    };
+
+    task.element = taskDiv;
 };
 
 let addTaskBtn=document.getElementById("addTaskBtn");
@@ -154,6 +168,78 @@ for(let i=0; i<arr.length; i++){
     addTaskImg();
 };
 console.log("Task added:" + taskNum);
+
+let buttons = document.querySelectorAll(".taskFilterBtn");
+let allBtn = document.getElementById("All");
+let pendingBtn = document.getElementById("Pending");
+let completedBtn = document.getElementById("Completed");
+
+allBtn.classList.add("active");
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+    });
+});
+
+pendingBtn.addEventListener("click", () => {
+    arr.forEach(task => {
+        if (task.completed) {
+            task.element.style.display = "none";
+        } else {
+            task.element.style.display = "flex";
+        }
+    });
+});
+
+completedBtn.addEventListener("click", () => {
+    arr.forEach(task => {
+        if(task.completed == false){
+            task.element.style.display = "none";
+        }else {
+            task.element.style.display = "flex"; 
+        }
+    });
+});
+
+allBtn.addEventListener("click", () => {
+    arr.forEach(task =>{
+        task.element.style.display = "flex";
+    });
+});
+
+// pendingBtn.addEventListener("click", () =>{
+//     tasksDiv.innerHTML = "";
+//     for(let i=0; i<arr.length; i++){
+//         let alltask = arr[i];
+//         if(arr[i].completed == false){
+//             createTask(alltask);
+//         };
+//     };
+// });
+
+// completedBtn.addEventListener("click", () => {
+//     tasksDiv.innerHTML = "";
+//     for(let i=0; i<arr.length; i++){
+//         let alltasks = arr[i];
+//         if(arr[i].completed == true){
+//             createTask(alltasks);
+//         };
+//     };
+// })
+
+// allBtn.addEventListener("click", () => {
+//     tasksDiv.innerHTML = "";
+//     for(let i=0; i<arr.length; i++){
+//         let allTasks = arr[i];
+//         createTask(allTasks);
+//         addTaskImg();
+//     };
+// })
+
+
+
+
 
 // Register Service Worker
 if ("serviceWorker" in navigator) {
